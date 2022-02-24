@@ -4,7 +4,7 @@ import {userSlice} from './UserSlice';
 export const fetchUsers = () => async (dispatch) => {
     try{
         dispatch(userSlice.actions.usersFetching());
-        const response = await axios.get('http://jsonplaceholder.typicode.com/photos');
+        const response = await axios.get('https://jsonplaceholder.typicode.com/photos');
         dispatch(userSlice.actions.usersFetchingSuccess(response.data));
         const albumIds = new Set();
         response.data.forEach((i) => {
